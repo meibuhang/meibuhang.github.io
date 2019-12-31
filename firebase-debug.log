@@ -1,0 +1,53 @@
+[debug] [2019-12-31T05:09:19.461Z] ----------------------------------------------------------------------
+[debug] [2019-12-31T05:09:19.464Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Mei\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2019-12-31T05:09:19.465Z] CLI Version:   7.11.0
+[debug] [2019-12-31T05:09:19.465Z] Platform:      win32
+[debug] [2019-12-31T05:09:19.465Z] Node Version:  v13.3.0
+[debug] [2019-12-31T05:09:19.465Z] Time:          Tue Dec 31 2019 12:09:19 GMT+0700 (Indochina Time)
+[debug] [2019-12-31T05:09:19.466Z] ----------------------------------------------------------------------
+[debug] [2019-12-31T05:09:19.466Z] 
+[debug] [2019-12-31T05:09:19.476Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-12-31T05:09:19.477Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\belajar programming\DICODING\ligabola-pwa-onprogress--master (2)\ligabola-pwa-onprogress--master
+
+Before we get started, keep in mind:
+
+  * You are initializing in an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[info] i  .firebaserc already has a default project, using ligasoccer-app.
+[debug] [2019-12-31T05:09:42.181Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/ligasoccer-app  
+ 
+[debug] [2019-12-31T05:09:42.580Z] <<< HTTP RESPONSE 200
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[info] +  Wrote y/404.html
+[debug] [2019-12-31T05:09:53.678Z] >>> HTTP REQUEST GET https://www.gstatic.com/firebasejs/releases.json  
+ 
+[debug] [2019-12-31T05:09:53.759Z] <<< HTTP RESPONSE 200
+[debug] [2019-12-31T05:10:05.917Z] Error: kill ENOSYS
+    at process.kill (internal/process/per_thread.js:194:13)
+    at process.listener (C:\Users\Mei\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\signal-exit\index.js:95:15)
+    at process.emit (events.js:219:5)
+[error] 
+[error] Error: An unexpected error has occurred.

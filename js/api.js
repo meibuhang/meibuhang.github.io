@@ -44,7 +44,7 @@ async function getKlasemen() {
           klasemen.table.slice(0, 10).forEach(dataTeam => {
             TeamHTML +=`
            
-          
+          <div class='row'>
            <div class ="col s4">
               <div class="card_image">
               <img src=${dataTeam.team.crestUrl.replace(/^http:\/\//i, 'https://')}>
@@ -92,17 +92,17 @@ async function getKlasemen() {
               </div>
               </div>
             </div>
-         
+            </div>
   `;
   });
   klasmenHTML += `
   <div class="main">
-  <div class="card-panel hoverable">
-  <div class ='row'>
-            ${TeamHTML}
-   </div>
-   </div>
-    </div>
+    <div class="container">
+    
+      ${TeamHTML}
+  
+  </div>
+  </div>
     `;
        });
        document.getElementById("body-content").innerHTML=klasmenHTML;
@@ -118,8 +118,8 @@ async function getKlasemen() {
   data.standings.slice(0, 10).forEach(klasemen => {
    klasemen.table.slice(0, 10).forEach(dataTeam => {
       TeamHTML +=`
-      
-     <div class ="col s6">
+      <div class ='row'>
+     <div class ="col s4">
         <div class="card_image">
                 <img src=${dataTeam.team.crestUrl.replace(/^http:\/\//i, 'https://')}>
                 </div>
@@ -166,14 +166,15 @@ async function getKlasemen() {
                 </div>
               </div>
             </div>
+            </div>
     `;
     });
     klasmenHTML += `
     <div class="main">
-    <div class="card-panel hoverable">
-    <div class ='row'>
+    <div class="container">
+    
       ${TeamHTML}
-  </div>
+  
   </div>
   </div>
    `;

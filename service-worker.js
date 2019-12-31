@@ -23,9 +23,11 @@ workbox.precaching.precacheAndRoute([
 	{ url: '/js/idb.js', revision: '1' },
 	{ url: '/js/db.js', revision: '1' }
 ]);
+
 workbox.routing.registerRoute(
 	new RegExp('https://api.football-data.org/v2'),
 	workbox.strategies.staleWhileRevalidate({
+		cacheName: 'api-cache',
 		plugins: [
 			new workbox.cacheableResponse.Plugin({
 				statuses: [ 200 ]
@@ -37,21 +39,31 @@ workbox.routing.registerRoute(
 		]
 	})
 );
-workbox.routing.registerRoute(new RegExp('.*.js' | '.*.html' | '.*css' | '.*png'), workbox.strategies.cacheFirst());
-workbox.routing.registerRoute(new RegExp('/pages/'), workbox.strategies.staleWhileRevalidate());
+workbox.routing.registerRoute(
+	/^https:\/\/fonts\.googleapis\.com/,
+	workbox.strategies.staleWhileRevalidate({
+		cacheName: 'google-fonts-stylesheets'
+	})
+);
 
 workbox.routing.registerRoute(
-	/\.(?:png|gif|jpg|jpeg|svg)$/,
+	/^https:\/\/fonts\.gstatic\.com/,
 	workbox.strategies.cacheFirst({
-		cacheName: 'images',
+		cacheName: 'google-fonts-webfonts',
 		plugins: [
+			new workbox.cacheableResponse.Plugin({
+				statuses: [ 0, 200 ]
+			}),
 			new workbox.expiration.Plugin({
-				maxEntries: 60,
-				maxAgeSeconds: 30 * 24 * 60 * 60 // 30 hari
+				maxEntries: 30,
+				maxAgeSeconds: 60 * 60 * 24 * 365 //1 Year
 			})
 		]
 	})
 );
+
+workbox.routing.registerRoute(new RegExp('.*.js' | '.*.html' | '.*css' | '.*png'), workbox.strategies.cacheFirst());
+
 // Add Push Notification
 self.addEventListener('push', function(event) {
 	let body;
