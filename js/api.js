@@ -43,8 +43,9 @@ async function getKlasemen() {
         data.standings.slice(0, 10).forEach(klasemen => {
           klasemen.table.slice(0, 10).forEach(dataTeam => {
             TeamHTML +=`
-            <li class="cards_item">
-            <div class="card">
+           
+          
+           <div class ="col s4">
               <div class="card_image">
               <img src=${dataTeam.team.crestUrl.replace(/^http:\/\//i, 'https://')}>
               </div>
@@ -89,15 +90,18 @@ async function getKlasemen() {
              
               <a href="../listteam.html?id=${dataTeam.team.id}" class="btn btn-default"> Detail Team </a>
               </div>
+              </div>
             </div>
-          </li>
+         
   `;
   });
   klasmenHTML += `
   <div class="main">
-  <ul class="cards">
+  <div class="card-panel hoverable">
+  <div class ='row'>
             ${TeamHTML}
-    </ul>
+   </div>
+   </div>
     </div>
     `;
        });
@@ -114,9 +118,9 @@ async function getKlasemen() {
   data.standings.slice(0, 10).forEach(klasemen => {
    klasemen.table.slice(0, 10).forEach(dataTeam => {
       TeamHTML +=`
-               <li class="cards_item">
-              <div class="card">
-                <div class="card_image">
+      
+     <div class ="col s6">
+        <div class="card_image">
                 <img src=${dataTeam.team.crestUrl.replace(/^http:\/\//i, 'https://')}>
                 </div>
                 <div class="card_content">
@@ -158,16 +162,19 @@ async function getKlasemen() {
                 <div class="value"> ${dataTeam.goalDifference} </div>
                 </div>
                 <a href="../listteam.html?id=${dataTeam.team.id}" class="btn btn-default"> Detail Team </a>
+               </div>
                 </div>
               </div>
-            </li>
+            </div>
     `;
     });
     klasmenHTML += `
     <div class="main">
-    <ul class="cards">
+    <div class="card-panel hoverable">
+    <div class ='row'>
       ${TeamHTML}
-  </ul>
+  </div>
+  </div>
   </div>
    `;
  });
@@ -374,6 +381,7 @@ async function getTeamById() {
                 <div id="MyFav" class="action_button">Add to Favorite</div>
               </div>
             </div>
+          </div>
           </div>
         `;
         document.getElementById("body-content").innerHTML = TeamHTML;
