@@ -1,0 +1,3 @@
+Project Console: https://console.firebase.google.com/project/ligasoccer-app/overview
+Hosting URL: https://ligasoccer-app.firebaseapp.com
+github : https://github.com/meibuhang/meibuhang.github.io

@@ -1,0 +1,2 @@
+endpoint:
+    https://fcm.googleapis.com/fcm/send/fnyvqVYZ4nQ:APA91bHVW1z5qAGqextO4bd_EHVi9toSid2cJ42FTcVghP1kEH0z1Tom6dByBSU0zf4L7w8ql2LxQ5cc2M8FJUyF8WWr6_f9GMTuFpj2l1yhsx0upuRYrpYzq4weL4wBFUmLhp4w3CPH
